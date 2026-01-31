@@ -1,0 +1,115 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FFF3C4;
+}
+
+/* แถบบน (☰ + search) */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+/* ปุ่ม hamburger */
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 0 12px;
+  width: 320px;
+  height: 42px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  background: transparent;
+}
+
+/* ไอคอนแว่นขยาย */
+.search-bar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* main */
+.home-main {
+  padding: 20px 40px;
+}
+
+/* tab */
+.tabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.tab {
+  cursor: pointer;
+  position: relative;
+}
+
+.tab.active {
+  color: red;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+}
+
+.book-section {
+  max-width: 1000px;     /* คุมความกว้างเหมือนเว็บจริง */
+  margin: 0 auto 40px;  /* จัดกลาง + เว้นด้านล่าง */
+}
+
+/* section title */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 20px;
+  font-weight: bold;
+}
+
+/* grid หนังสือ */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 เล่มต่อแถวเหมือนรูป */
+  gap: 30px;
+  justify-items: center; /* การ์ดอยู่กึ่งกลางช่อง */
+}
+
+.book-card {
+  text-align: center;
+  width: 120px;
+}
+
+.book-card img {
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

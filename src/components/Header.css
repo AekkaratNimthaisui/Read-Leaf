@@ -1,0 +1,40 @@
+.top-bar {
+  background-color: white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0 20px; /* ลบ padding-top */
+  height: 120px; 
+  position: relative; 
+}
+
+.logo {
+  height: 150px; /* โลโก้สูงตามต้องการ */
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+.header-right {
+  position: absolute;
+  right: 100px; 
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.login-text {
+  font-size: 1em;
+  color: #000000; /* ใช้สีเดิม */
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}

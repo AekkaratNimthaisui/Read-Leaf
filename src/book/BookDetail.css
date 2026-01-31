@@ -1,0 +1,73 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FFF3C4;
+}
+
+.detail-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.detail-left-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-link {
+  font-weight: bold;
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+
+.detail-main {
+  display: flex;
+  gap: 40px;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.detail-left {
+  flex: 2;
+}
+
+.book-summary {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.book-summary img {
+  width: 140px;
+  border-radius: 10px;
+}
+
+.summary-text h2 {
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.detail-right {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  height: 800px;
+}
