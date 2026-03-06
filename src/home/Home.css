@@ -4,7 +4,6 @@
   background-color: #FFF3C4;
 }
 
-/* แถบบน (☰ + search) */
 .top-controls {
   display: flex;
   justify-content: space-between;
@@ -12,7 +11,6 @@
   padding: 20px 40px;
 }
 
-/* ปุ่ม hamburger */
 .hamburger {
   font-size: 28px;
   background: none;
@@ -20,7 +18,6 @@
   cursor: pointer;
 }
 
-/* search bar */
 .search-bar {
   display: flex;
   align-items: center;
@@ -40,7 +37,6 @@
   background: transparent;
 }
 
-/* ไอคอนแว่นขยาย */
 .search-bar button {
   border: none;
   background: none;
@@ -48,12 +44,10 @@
   font-size: 18px;
 }
 
-/* main */
 .home-main {
   padding: 20px 40px;
 }
 
-/* tab */
 .tabs {
   display: flex;
   gap: 30px;
@@ -81,11 +75,10 @@
 }
 
 .book-section {
-  max-width: 1000px;     /* คุมความกว้างเหมือนเว็บจริง */
-  margin: 0 auto 40px;  /* จัดกลาง + เว้นด้านล่าง */
+  max-width: 1000px;    
+  margin: 0 auto 40px;  
 }
 
-/* section title */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -93,12 +86,11 @@
   font-weight: bold;
 }
 
-/* grid หนังสือ */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 เล่มต่อแถวเหมือนรูป */
+  grid-template-columns: repeat(5, 1fr); 
   gap: 30px;
-  justify-items: center; /* การ์ดอยู่กึ่งกลางช่อง */
+  justify-items: center; 
 }
 
 .book-card {

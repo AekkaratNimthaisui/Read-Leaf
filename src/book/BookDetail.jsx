@@ -1,8 +1,20 @@
 import "./BookDetail.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function BookDetail() {
+  const { id } = useParams();   
+  const [book, setBook] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/books/${id}`)
+      .then(res => res.json())
+      .then(data => setBook(data));
+  }, [id]);
+
+  if (!book) return <div>Loading...</div>;
   return (
     <div className="page">
       <Header />
@@ -28,7 +40,7 @@ function BookDetail() {
             <img src="/book2.jpg" alt="" />
 
             <div className="summary-text">
-              <h2>ขาดคุณนางฟ้าข้างห้องไป ผมคงมีชีวิตต่อไปไม่ได้อีกแล้ว</h2>
+              <h2>{book.title}</h2>
               <p>สำนักพิมพ์ Animag</p>
               <p>หมวดหมู่ Light novel</p>
             </div>
@@ -46,9 +58,9 @@ function BookDetail() {
 
         <div className="detail-right">
           <h3>รายละเอียด</h3>
-          <p>ราคา 270</p>
-          <p>น้ำหนัก 350 กรัม</p>
-          <p>ผู้เขียน(แต่ง) ซาเอกิซัง</p>
+          <p>ราคา {book.price} บาท</p>
+          <p>น้ำหนัก {book.weight} กรัม</p>
+          <p>ผู้เขียน {book.author}</p>
           <p>ผู้วาดภาพประกอบ ฮาเนะโคโตะ</p>
           <p>ผู้แปล ชัยพฤกษ์ วุฒิบุญวัฒนา</p>
           <p>วันที่วางจำหน่ายตุลาคม 2564</p>

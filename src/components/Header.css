@@ -4,13 +4,13 @@
   justify-content: center; 
   align-items: center;  
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 0 20px; /* ลบ padding-top */
+  padding: 0 20px;
   height: 120px; 
   position: relative; 
 }
 
 .logo {
-  height: 150px; /* โลโก้สูงตามต้องการ */
+  height: 150px;
   object-fit: contain;
   margin-top: 20px;
 }
@@ -27,7 +27,7 @@
 
 .login-text {
   font-size: 1em;
-  color: #000000; /* ใช้สีเดิม */
+  color: #000000; 
   cursor: pointer;
 }
 

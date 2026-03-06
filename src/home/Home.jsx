@@ -1,8 +1,21 @@
 import "./Home.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Home() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/books")
+      .then(res => res.json())
+      .then(data => setBooks(data));
+  }, []);
+
+  const getBookById = (id) => {
+  return books.find(book => book.bookId === id);
+  };
+  
   return (
     <div className="page">
       <Header />
@@ -18,13 +31,11 @@ function Home() {
 
       <main className="home-main">
 
-  {/* Tabs */}
   <div className="tabs">
     <div className="tab active">Light Novel</div>
     <div className="tab">Manga</div>
   </div>
 
-  {/* ===== ยอดนิยม ===== */}
   <section className="book-section">
     <div className="section-header">
       <span>ยอดนิยม</span>
@@ -34,28 +45,27 @@ function Home() {
     <div className="book-grid">
       <div className="book-card">
         <img src="/book1.jpg" alt="" />
-        <p>คุณอาเรียโต๊ะข้างๆ พูดรัสเซียหวานใส่ซะหัวใจจะวาย</p>
+        <p>{getBookById(1)?.title}</p>
       </div>
       <Link to="/book/2" className="book-card">
         <img src="/book2.jpg" alt="" />
-        <p>ขาดคุณนางฟ้าข้างห้องไป</p>
+        <p>{getBookById(2)?.title}</p>
       </Link>
       <div className="book-card">
         <img src="/book3.jpg" alt="" />
-        <p>Re:ZERO รีเซทชีวิต ฝ่าวิกฤตต่างโลก</p>
+        <p>{getBookById(3)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book4.jpg" alt="" />
-        <p>86-เอทตี้ซิกซ์-</p>
+        <p>{getBookById(4)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book5.jpg" alt="" />
-        <p>มุมมองนักอ่านพระเจ้า</p>
+        <p>{getBookById(5)?.title}</p>
       </div>
     </div>
   </section>
 
-  {/* ===== โรแมนติก ===== */}
   <section className="book-section">
     <div className="section-header">
       <span>โรแมนติก</span>
@@ -65,23 +75,23 @@ function Home() {
     <div className="book-grid">
       <div className="book-card">
         <img src="/book2.jpg" alt="" />
-        <p> ขาดคุณนางฟ้าข้างห้องไป ผมคงมีชีวิตต่อไปไม่ได้อีกแล้ว</p>
+        <p>{getBookById(2)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book6.jpg" alt="" />
-        <p> อันเนมด์ เมโมรี</p>
+        <p>{getBookById(6)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book1.jpg" alt="" />
-        <p> คุณอาเรียโต๊ะข้างๆ พูดรัสเซียหวานใส่ซะหัวใจจะวาย</p>
+        <p>{getBookById(1)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book7.jpg" alt="" />
-        <p> โจเซ่ กับเสือและหมู่ปลา</p>
+        <p>{getBookById(7)?.title}</p>
       </div>
       <div className="book-card">
         <img src="/book8.jpg" alt="" />
-        <p>มันผิดรึไงถ้าใจอยากจะพบรักในดันเจี้ยน</p>
+        <p>{getBookById(8)?.title}</p>
       </div>
     </div>
   </section>
